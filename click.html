@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click event add</title>
+</head>
+<body>
+    <h1>Handel add</h1>
+
+    <p id="default-text">Default text</p>
+    <!-- <p id="another-text">Another Default text</p> -->
+
+    <button onclick="handelOnClick()">Onclick event</button>
+
+    <button id="event-listener">Add Event Listener</button>
+
+    <br> <br>
+    <p id="text-display">Text display</p>
+    <input id="input-field" type="text">
+    <button id="btn-update">Text Update</button>
+
+
+    <!-- JavaScript -->
+
+    <script>
+        // option one
+        function handelOnClick(){
+            const handlerStatus = document.getElementById('default-text');
+            handlerStatus.innerText= 'Handler status change by Onclick event';
+        }
+
+        // Option two
+
+        document.getElementById('event-listener').addEventListener('click', function(){
+            const inputText = document.getElementById('default-text');
+            inputText.innerText = 'Handler change by Add event listener'
+        })
+
+        // option 2 recap
+
+        document.getElementById('btn-update').addEventListener('click', function(){
+            const inputFiled = document.getElementById('input-field');
+            const inputFiledText = inputFiled.value;
+
+            const p = document.getElementById('text-display');
+            p.innerText = inputFiledText;
+            inputFiled.value = '';
+
+        })
+    </script>
+</body>
+</html>
